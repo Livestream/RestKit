@@ -446,7 +446,8 @@ BOOL RKDoesArrayOfResponseDescriptorsContainOnlyEntityMappings(NSArray *response
     if (self) {
         self.savesToPersistentStore = YES;
         self.deletesOrphanedObjects = YES;
-        self.cachedResponse = [[NSURLCache sharedURLCache] cachedResponseForRequest:requestOperation.request];
+        /* LIVESTREAM CHANGED */
+        /* self.cachedResponse = [[NSURLCache sharedURLCache] cachedResponseForRequest:requestOperation.request]; */
     }
     return self;
 }

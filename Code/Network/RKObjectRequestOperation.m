@@ -525,6 +525,7 @@ static NSString *RKStringDescribingURLResponseWithData(NSURLResponse *response, 
             if (weakSelf.error) {
                 weakSelf.mappingResult = nil;
             } else {
+                /* LIVESTREAM CHANGED */
                 /* NSCachedURLResponse *cachedResponse = [[NSURLCache sharedURLCache] cachedResponseForRequest:weakSelf.HTTPRequestOperation.request];
                 if (cachedResponse) {
                     // We're all done mapping this request. Now we set a flag on the cache entry's userInfo dictionary to indicate that the request
