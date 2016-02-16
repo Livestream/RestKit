@@ -491,8 +491,7 @@ static NSString *RKStringDescribingURLResponseWithData(NSURLResponse *response, 
             if (weakSelf.error) {
                 weakSelf.mappingResult = nil;
             } else {
-                /* LIVESTREAM CHANGED */
-                /* NSCachedURLResponse *cachedResponse = [[NSURLCache sharedURLCache] cachedResponseForRequest:weakSelf.HTTPRequestOperation.request];
+                NSCachedURLResponse *cachedResponse = [[NSURLCache sharedURLCache] cachedResponseForRequest:weakSelf.HTTPRequestOperation.request];
                 if (cachedResponse) {
                     // We're all done mapping this request. Now we set a flag on the cache entry's userInfo dictionary to indicate that the request
                     // corresponding to the cache entry completed successfully, and we can reliably skip mapping if a subsequent request results
@@ -501,7 +500,7 @@ static NSString *RKStringDescribingURLResponseWithData(NSURLResponse *response, 
                     userInfo[RKResponseHasBeenMappedCacheUserInfoKey] = @YES;
                     NSCachedURLResponse *newCachedResponse = [[NSCachedURLResponse alloc] initWithResponse:cachedResponse.response data:cachedResponse.rkData userInfo:userInfo storagePolicy:cachedResponse.storagePolicy];
                     [[NSURLCache sharedURLCache] storeCachedResponse:newCachedResponse forRequest:weakSelf.HTTPRequestOperation.request];
-                } */
+                }
             }
             
             weakSelf.mappingDidFinishDate = [NSDate date];
