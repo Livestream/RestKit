@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   # Platform setup
   s.requires_arc = true
   s.ios.deployment_target = '5.1.1'
+  s.tvos.deployment_target = '9.0'
   s.osx.deployment_target = '10.7'
 
   # Exclude optional Search and Testing modules
@@ -55,7 +56,7 @@ EOS
 
 #define _AFNETWORKING_PIN_SSL_CERTIFICATES_
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED || __TV_OS_VERSION_MIN_REQUIRED)
   #import <SystemConfiguration/SystemConfiguration.h>
   #import <MobileCoreServices/MobileCoreServices.h>
   #import <Security/Security.h>
@@ -81,7 +82,7 @@ EOS
 
 #define _AFNETWORKING_PIN_SSL_CERTIFICATES_
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED || __TV_OS_VERSION_MIN_REQUIRED)
   #import <SystemConfiguration/SystemConfiguration.h>
   #import <MobileCoreServices/MobileCoreServices.h>
   #import <Security/Security.h>
